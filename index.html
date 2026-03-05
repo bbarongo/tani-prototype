@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visit Taniti | Home</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header>
+  <div class="container header-row">
+    <a class="brand" href="index.html" aria-label="Visit Taniti Home">
+      <div class="logo">T</div>
+      <div>Visit Taniti</div>
+    </a>
+
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="activities.html">Things To Do</a>
+      <a href="lodging.html">Lodging</a>
+      <a href="plan.html">Plan Your Trip</a>
+    </nav>
+
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">Menu</button>
+  </div>
+
+  <div class="container mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+    <a href="index.html" aria-current="page">Home</a>
+    <a href="activities.html">Things To Do</a>
+    <a href="lodging.html">Lodging</a>
+    <a href="plan.html">Plan Your Trip</a>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero" aria-label="Hero section">
+    <div class="hero-grid">
+      <div>
+        <h1>Taniti: beaches, rainforest, and a living volcano</h1>
+        <p>
+          Plan a comfortable, family-friendly trip with clear info on lodging, activities, transportation,
+          and important visitor details—all in one modern, mobile-ready site.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="activities.html">Explore Activities</a>
+          <a class="btn" href="lodging.html">Book Your Stay</a>
+        </div>
+
+        <div class="section" style="margin-top:18px;">
+          <div class="notice">
+            Tip for first-time visitors: Start with <strong>Plan Your Trip</strong> for airport info, buses, taxis, and local rules.
+          </div>
+        </div>
+      </div>
+
+      <aside class="quick-box" aria-label="Quick info">
+        <h3>Quick Info</h3>
+        <ul class="quick-list">
+          <li>Currency: U.S. dollar accepted (many places also accept cards)</li>
+          <li>Power outlets: 120V (U.S.-style)</li>
+          <li>Safety: violent crime is rare; watch for petty theft</li>
+          <li>Alcohol: no sales midnight–9:00 a.m.</li>
+          <li>Holidays: some attractions may close</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Top attractions">
+    <h2>Top Attractions</h2>
+    <div class="grid-3">
+      <div class="card">
+        <div class="thumb">Image</div>
+        <h3>Beaches</h3>
+        <p>Relax along Yellow Leaf Bay’s sandy shoreline and coastal views.</p>
+        <div class="card-actions">
+          <a class="btn" href="activities.html">See beach activities</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="thumb">Image</div>
+        <h3>Rainforest</h3>
+        <p>Hikes, zip-lining, and guided tours through lush tropical trails.</p>
+        <div class="card-actions">
+          <a class="btn" href="activities.html">Explore rainforest</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="thumb">Image</div>
+        <h3>Volcano</h3>
+        <p>Visit Taniti’s active volcano with tours designed for safety and views.</p>
+        <div class="card-actions">
+          <a class="btn" href="activities.html">View volcano tours</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Popular activities">
+    <h2>Popular Activities</h2>
+    <div class="grid-3">
+      <div class="card">
+        <h3>Snorkeling</h3>
+        <p>Guided snorkeling tours near the bay.</p>
+        <div class="card-actions">
+          <a class="btn" href="activities.html">Learn more</a>
+          <button class="btn primary" onclick="openBookingModal('Snorkeling Tour')">Book Now</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Zip-Lining</h3>
+        <p>Rainforest zip-line adventures for thrill seekers.</p>
+        <div class="card-actions">
+          <a class="btn" href="activities.html">Learn more</a>
+          <button class="btn primary" onclick="openBookingModal('Rainforest Zip-Lining')">Book Now</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Boat & Bus Tours</h3>
+        <p>See Taniti City and the island’s highlights with guided tours.</p>
+        <div class="card-actions">
+          <a class="btn" href="activities.html">Learn more</a>
+          <button class="btn primary" onclick="openBookingModal('Island Tour')">Book Now</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <small>
+      Prototype for WGU UX project. Links and booking are simulated.
+      <a href="plan.html">Visitor info</a>
+    </small>
+  </div>
+</footer>
+
+<!-- Booking Modal -->
+<div class="modal-backdrop" id="modalBackdrop" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="modal">
+    <h3 id="modalTitle">Booking</h3>
+    <p id="modalBody"></p>
+    <div class="modal-actions">
+      <button class="btn primary" onclick="closeBookingModal()">Close</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

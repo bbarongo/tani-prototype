@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visit Taniti | Things To Do</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header>
+  <div class="container header-row">
+    <a class="brand" href="index.html" aria-label="Visit Taniti Home">
+      <div class="logo">T</div>
+      <div>Visit Taniti</div>
+    </a>
+
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="activities.html" aria-current="page">Things To Do</a>
+      <a href="lodging.html">Lodging</a>
+      <a href="plan.html">Plan Your Trip</a>
+    </nav>
+
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">Menu</button>
+  </div>
+
+  <div class="container mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="activities.html" aria-current="page">Things To Do</a>
+    <a href="lodging.html">Lodging</a>
+    <a href="plan.html">Plan Your Trip</a>
+  </div>
+</header>
+
+<main class="container">
+  <h1 style="margin:0 0 6px;">Things To Do</h1>
+  <p style="margin:0 0 16px; color:var(--muted);">
+    Browse activities and book through an external partner (simulated in this prototype).
+  </p>
+
+  <div class="toolbar" aria-label="Search and filters">
+    <div class="input" aria-label="Search activities">
+      🔎 <input id="activitySearch" type="search" placeholder="Search: snorkeling, volcano, museum..." />
+    </div>
+
+    <div class="filters" aria-label="Activity filters">
+      <button class="pill" aria-pressed="true" data-filter="all">All</button>
+      <button class="pill" aria-pressed="false" data-filter="adventure">Adventure</button>
+      <button class="pill" aria-pressed="false" data-filter="relaxation">Relaxation</button>
+      <button class="pill" aria-pressed="false" data-filter="family">Family-Friendly</button>
+      <button class="pill" aria-pressed="false" data-filter="nightlife">Nightlife</button>
+    </div>
+  </div>
+
+  <div id="activityEmpty" class="notice" style="display:none;">
+    No activities match your search/filter. Try a different keyword.
+  </div>
+
+  <section class="section">
+    <div class="grid-3">
+      <!-- Card 1 -->
+      <article class="card js-activity-card">
+        <div class="thumb">Image</div>
+        <h3 class="js-title">Snorkeling Tour</h3>
+        <div class="badges">
+          <span class="badge js-tag">relaxation</span>
+          <span class="badge js-tag">family</span>
+          <span class="badge">$</span>
+        </div>
+        <p>Guided snorkeling near Yellow Leaf Bay with calm entry points.</p>
+        <div class="card-actions">
+          <button class="btn" onclick="alert('Details page not built in this prototype.');">Learn More</button>
+          <button class="btn primary" onclick="openBookingModal('Snorkeling Tour')">Book Now (External)</button>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="card js-activity-card">
+        <div class="thumb">Image</div>
+        <h3 class="js-title">Rainforest Zip-Lining</h3>
+        <div class="badges">
+          <span class="badge js-tag">adventure</span>
+          <span class="badge">$$</span>
+        </div>
+        <p>Zip-line above rainforest canopy with certified guides.</p>
+        <div class="card-actions">
+          <button class="btn" onclick="alert('Details page not built in this prototype.');">Learn More</button>
+          <button class="btn primary" onclick="openBookingModal('Rainforest Zip-Lining')">Book Now (External)</button>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="card js-activity-card">
+        <div class="thumb">Image</div>
+        <h3 class="js-title">Volcano Day Tour</h3>
+        <div class="badges">
+          <span class="badge js-tag">adventure</span>
+          <span class="badge js-tag">family</span>
+          <span class="badge">$$</span>
+        </div>
+        <p>Guided visit to Taniti’s active volcano with scenic stops.</p>
+        <div class="card-actions">
+          <button class="btn" onclick="alert('Details page not built in this prototype.');">Learn More</button>
+          <button class="btn primary" onclick="openBookingModal('Volcano Day Tour')">Book Now (External)</button>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="card js-activity-card">
+        <div class="thumb">Image</div>
+        <h3 class="js-title">Local History Museum</h3>
+        <div class="badges">
+          <span class="badge js-tag">family</span>
+          <span class="badge">$</span>
+        </div>
+        <p>Explore Taniti’s culture, architecture, and local history.</p>
+        <div class="card-actions">
+          <button class="btn" onclick="alert('Details page not built in this prototype.');">Learn More</button>
+          <button class="btn primary" onclick="openBookingModal('Local History Museum')">Book Now (External)</button>
+        </div>
+      </article>
+
+      <!-- Card 5 -->
+      <article class="card js-activity-card">
+        <div class="thumb">Image</div>
+        <h3 class="js-title">Chartered Fishing Tour</h3>
+        <div class="badges">
+          <span class="badge js-tag">adventure</span>
+          <span class="badge">$$$</span>
+        </div>
+        <p>Half-day and full-day fishing trips from the safe harbor.</p>
+        <div class="card-actions">
+          <button class="btn" onclick="alert('Details page not built in this prototype.');">Learn More</button>
+          <button class="btn primary" onclick="openBookingModal('Chartered Fishing Tour')">Book Now (External)</button>
+        </div>
+      </article>
+
+      <!-- Card 6 -->
+      <article class="card js-activity-card">
+        <div class="thumb">Image</div>
+        <h3 class="js-title">Microbrewery & Pubs</h3>
+        <div class="badges">
+          <span class="badge js-tag">nightlife</span>
+          <span class="badge">$$</span>
+        </div>
+        <p>Enjoy local drinks (note: no alcohol sales midnight–9 a.m.).</p>
+        <div class="card-actions">
+          <button class="btn" onclick="alert('Details page not built in this prototype.');">Learn More</button>
+          <button class="btn primary" onclick="openBookingModal('Microbrewery & Pubs')">Book Now (External)</button>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <small>Need logistics? Visit <a href="plan.html">Plan Your Trip</a>.</small>
+  </div>
+</footer>
+
+<!-- Booking Modal -->
+<div class="modal-backdrop" id="modalBackdrop" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="modal">
+    <h3 id="modalTitle">Booking</h3>
+    <p id="modalBody"></p>
+    <div class="modal-actions">
+      <button class="btn primary" onclick="closeBookingModal()">Close</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+  setupCardSearch({
+    inputId: "activitySearch",
+    cardSelector: ".js-activity-card",
+    titleSelector: ".js-title",
+    tagSelector: ".js-tag",
+    emptyId: "activityEmpty"
+  });
+
+  setupPillFilters({
+    pillSelector: ".pill",
+    cardSelector: ".js-activity-card",
+    tagSelector: ".js-tag",
+    emptyId: "activityEmpty"
+  });
+</script>
+</body>
+</html>

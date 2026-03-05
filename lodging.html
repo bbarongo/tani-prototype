@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visit Taniti | Lodging</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header>
+  <div class="container header-row">
+    <a class="brand" href="index.html" aria-label="Visit Taniti Home">
+      <div class="logo">T</div>
+      <div>Visit Taniti</div>
+    </a>
+
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="activities.html">Things To Do</a>
+      <a href="lodging.html" aria-current="page">Lodging</a>
+      <a href="plan.html">Plan Your Trip</a>
+    </nav>
+
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">Menu</button>
+  </div>
+
+  <div class="container mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="activities.html">Things To Do</a>
+    <a href="lodging.html" aria-current="page">Lodging</a>
+    <a href="plan.html">Plan Your Trip</a>
+  </div>
+</header>
+
+<main class="container">
+  <h1 style="margin:0 0 6px;">Lodging</h1>
+  <p style="margin:0 0 16px; color:var(--muted);">
+    All lodging types are regulated and regularly inspected. Booking is simulated as an external partner.
+  </p>
+
+  <div class="toolbar">
+    <div class="input" aria-label="Search lodging">
+      🔎 <input id="lodgingSearch" type="search" placeholder="Search: resort, hotel, hostel, B&B..." />
+    </div>
+  </div>
+
+  <div id="lodgingEmpty" class="notice" style="display:none;">
+    No lodging matches your search. Try a different keyword.
+  </div>
+
+  <section class="section">
+    <div class="grid-3">
+      <article class="card js-lodging-card">
+        <div class="thumb">Image</div>
+        <h3 class="js-title">Taniti Four-Star Resort</h3>
+        <div class="badges">
+          <span class="badge js-tag">resort</span>
+          <span class="badge">$$$$</span>
+          <span class="badge">Inspected</span>
+        </div>
+        <p>Full-service resort near key attractions with family amenities.</p>
+        <div class="card-actions">
+          <button class="btn" onclick="alert('Details page not built in this prototype.');">View Details</button>
+          <button class="btn primary" onclick="openBookingModal('Taniti Four-Star Resort')">Book Now (External)</button>
+        </div>
+      </article>
+
+      <article class="card js-lodging-card">
+        <div class="thumb">Image</div>
+        <h3 class="js-title">Merriton Landing Hotel</h3>
+        <div class="badges">
+          <span class="badge js-tag">hotel</span>
+          <span class="badge">$$$</span>
+          <span class="badge">Inspected</span>
+        </div>
+        <p>Walkable location near shops, activities, and dining.</p>
+        <div class="card-actions">
+          <button class="btn" onclick="alert('Details page not built in this prototype.');">View Details</button>
+          <button class="btn primary" onclick="openBookingModal('Merriton Landing Hotel')">Book Now (External)</button>
+        </div>
+      </article>
+
+      <article class="card js-lodging-card">
+        <div class="thumb">Image</div>
+        <h3 class="js-title">Family-Owned Beach Hotel</h3>
+        <div class="badges">
+          <span class="badge js-tag">hotel</span>
+          <span class="badge">$$</span>
+          <span class="badge">Inspected</span>
+        </div>
+        <p>Simple, comfortable stay with easy access to the bay.</p>
+        <div class="card-actions">
+          <button class="btn" onclick="alert('Details page not built in this prototype.');">View Details</button>
+          <button class="btn primary" onclick="openBookingModal('Family-Owned Beach Hotel')">Book Now (External)</button>
+        </div>
+      </article>
+
+      <article class="card js-lodging-card">
+        <div class="thumb">Image</div>
+        <h3 class="js-title">Taniti Bed & Breakfast</h3>
+        <div class="badges">
+          <span class="badge js-tag">b&b</span>
+          <span class="badge">$$</span>
+          <span class="badge">Inspected</span>
+        </div>
+        <p>Cozy rooms with local hosts and breakfast included.</p>
+        <div class="card-actions">
+          <button class="btn" onclick="alert('Details page not built in this prototype.');">View Details</button>
+          <button class="btn primary" onclick="openBookingModal('Taniti Bed & Breakfast')">Book Now (External)</button>
+        </div>
+      </article>
+
+      <article class="card js-lodging-card">
+        <div class="thumb">Image</div>
+        <h3 class="js-title">Budget Hostel</h3>
+        <div class="badges">
+          <span class="badge js-tag">hostel</span>
+          <span class="badge">$</span>
+          <span class="badge">Inspected</span>
+        </div>
+        <p>Low-cost option for travelers who prioritize affordability.</p>
+        <div class="card-actions">
+          <button class="btn" onclick="alert('Details page not built in this prototype.');">View Details</button>
+          <button class="btn primary" onclick="openBookingModal('Budget Hostel')">Book Now (External)</button>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <small>Check transport details on <a href="plan.html">Plan Your Trip</a>.</small>
+  </div>
+</footer>
+
+<!-- Booking Modal -->
+<div class="modal-backdrop" id="modalBackdrop" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="modal">
+    <h3 id="modalTitle">Booking</h3>
+    <p id="modalBody"></p>
+    <div class="modal-actions">
+      <button class="btn primary" onclick="closeBookingModal()">Close</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+  setupCardSearch({
+    inputId: "lodgingSearch",
+    cardSelector: ".js-lodging-card",
+    titleSelector: ".js-title",
+    tagSelector: ".js-tag",
+    emptyId: "lodgingEmpty"
+  });
+</script>
+</body>
+</html>

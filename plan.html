@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visit Taniti | Plan Your Trip</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header>
+  <div class="container header-row">
+    <a class="brand" href="index.html" aria-label="Visit Taniti Home">
+      <div class="logo">T</div>
+      <div>Visit Taniti</div>
+    </a>
+
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="activities.html">Things To Do</a>
+      <a href="lodging.html">Lodging</a>
+      <a href="plan.html" aria-current="page">Plan Your Trip</a>
+    </nav>
+
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">Menu</button>
+  </div>
+
+  <div class="container mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="activities.html">Things To Do</a>
+    <a href="lodging.html">Lodging</a>
+    <a href="plan.html" aria-current="page">Plan Your Trip</a>
+  </div>
+</header>
+
+<main class="container">
+  <h1 style="margin:0 0 6px;">Plan Your Trip</h1>
+  <p style="margin:0 0 18px; color:var(--muted);">
+    First-time visitor essentials: getting here, getting around, and key local information.
+  </p>
+
+  <div class="two-col">
+    <section class="card" aria-label="Getting here">
+      <h2 style="margin:0 0 10px;">Getting Here</h2>
+      <ul class="quick-list">
+        <li><strong>Air travel:</strong> Most visitors arrive by air via Taniti’s airport.</li>
+        <li><strong>Cruise ship:</strong> A small cruise ship docks in Yellow Leaf Bay one night per week.</li>
+      </ul>
+    </section>
+
+    <section class="card" aria-label="Transportation">
+      <h2 style="margin:0 0 10px;">Transportation & Getting Around</h2>
+      <ul class="quick-list">
+        <li><strong>Public buses:</strong> Taniti City (5:00 a.m.–11:00 p.m.)</li>
+        <li><strong>Private buses:</strong> Serve the rest of the island</li>
+        <li><strong>Taxis:</strong> Available in Taniti City</li>
+        <li><strong>Rental cars:</strong> Near the airport</li>
+        <li><strong>Bikes:</strong> Helmets required by law</li>
+        <li><strong>Walkability:</strong> Taniti City and Merriton Landing are easy to explore on foot</li>
+      </ul>
+    </section>
+  </div>
+
+  <section class="section">
+    <h2>Important Visitor Information</h2>
+    <div class="grid-3">
+      <div class="card">
+        <h3>Currency & Payments</h3>
+        <p>Taniti uses the U.S. dollar. Many businesses accept major credit cards.</p>
+      </div>
+      <div class="card">
+        <h3>Safety</h3>
+        <p>Violent crime is rare. As tourism increases, petty theft can occur—stay aware.</p>
+      </div>
+      <div class="card">
+        <h3>Laws & Practical Info</h3>
+        <p>Alcohol not served/sold midnight–9 a.m. Power outlets are 120V.</p>
+      </div>
+      <div class="card">
+        <h3>Language</h3>
+        <p>Many younger residents speak English. Rural areas may have limited English.</p>
+      </div>
+      <div class="card">
+        <h3>Health Services</h3>
+        <p>One hospital and several clinics; hospital has multilingual employees.</p>
+      </div>
+      <div class="card">
+        <h3>Holidays</h3>
+        <p>Many national holidays—some attractions and restaurants may be closed.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <small>Ready to pick activities? Go to <a href="activities.html">Things To Do</a>.</small>
+  </div>
+</footer>
+
+<!-- Booking Modal -->
+<div class="modal-backdrop" id="modalBackdrop" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="modal">
+    <h3 id="modalTitle">Booking</h3>
+    <p id="modalBody"></p>
+    <div class="modal-actions">
+      <button class="btn primary" onclick="closeBookingModal()">Close</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
